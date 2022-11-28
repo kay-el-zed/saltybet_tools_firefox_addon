@@ -15,6 +15,10 @@ p2_link.innerHTML='Link';
 var p1_text=document.createTextNode('');
 var p2_text=document.createTextNode('');
 var mid_text=document.createElement('div');
+
+var text_loading = " (Loading stats...)";
+var link_fighter_default = "https://salty.imaprettykitty.com/live/";
+
 init();
 function init()
 {
@@ -72,6 +76,13 @@ function update()
 		setTimeout(update,100);
 		return;
 	}
+	//replace last match's stats with a loading message to avoid confusion.
+	p1_text.nodeValue = text_loading;
+	p1_link.href = link_fighter_default;
+	p2_text.nodeValue = text_loading;
+	p2_link.href = link_fighter_default;
+	mid_text.innerHTML = text_loading;
+
 	xhr_proxy(player1,player2,function(data)
 	{
 		setTimeout(update,1000);
