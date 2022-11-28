@@ -2,8 +2,11 @@
 	"name":"Salty Finder",
 	"short_name":"Salty Finder",
 	"description":"Saltybet database viewer.",
-	"version":"2019.5.8.1",
+	"version":"2022.11.28.1",
 	"manifest_version":2,
+	"browser_specific_settings": {
+		"strict_min_version": "48.0"
+	},
 	"permissions":
 	[
 		"http://mugen.saltybet.com/",
@@ -40,7 +43,7 @@
 	"icons":
 	{
 		"16":"images/favicon-16x16.png",
-		"128":"images/favicon-32x32.png"
+		"32":"images/favicon-32x32.png"
 	},
 	"externally_connectable":
 	{
