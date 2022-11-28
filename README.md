@@ -1,8 +1,6 @@
 # saltybet_tools_chrome_extension
 
-Chrome extension to show statistics in the saltybet window.
-
-[Get it on the Chrome App Store!](https://chrome.google.com/webstore/detail/copocnlfmefhjhcpnciembhppkkaoagi/)
+Firefox extension to show statistics in the saltybet window. Small changes required to make it compatible with Firefox, with some personal edits. 
 
 ![Screenshot](/screenshot.png)
 
