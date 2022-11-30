@@ -1,6 +1,6 @@
-# saltybet_tools_chrome_extension
+# saltybet_tools_firefox_addon
 
-Firefox extension to show statistics in the saltybet window. Small changes required to make it compatible with Firefox, with some personal edits. 
+Fork of the chrome extension repo. Firefox add-on to show statistics in the saltybet window. Very small manifest changes needed to make it compatible with Firefox, while adding some personal edits. 
 
 ![Screenshot](/screenshot.png)
 
