@@ -17,6 +17,7 @@ var p2_text=document.createTextNode('');
 var mid_text=document.createElement('div');
 
 var text_loading = " (Loading stats...)";
+
 var link_fighter_default = "https://salty.imaprettykitty.com/live/";
 
 init();
@@ -57,6 +58,7 @@ function init()
 	p2_div.appendChild(p2_link);
 	p1_div.appendChild(p1_text);
 	p2_div.appendChild(p2_text);
+
 	update();
 }
 function update()
@@ -66,6 +68,7 @@ function update()
 	var tournament_note=document.getElementById('tournament-note');
 	var player1=p1_button.value;
 	var player2=p2_button.value;
+
 	if(player1.length==0||player2.length==0)
 	{
 		setTimeout(update,100);
@@ -81,7 +84,17 @@ function update()
 	p1_link.href = link_fighter_default;
 	p2_text.nodeValue = text_loading;
 	p2_link.href = link_fighter_default;
-	mid_text.innerHTML = text_loading;
+	mid_text.nodeValue = text_loading;
+
+	//since this node doesn't always exist, so check for it on every fighter update. 
+	//if it's display isn't set to none, set it to be.
+	//tournament-note causes layout issues - everything gets pushed down and you can't see fighter stats or odds.
+	//we're just gonna hide since it's _usually_ obvious when SB is in tourney mode.  
+	if (tournament_note) {
+		if(tournament_note.style.display !== 'none') {
+			tournament_note.style.display = 'none';
+		}
+	}
 
 	xhr_proxy(player1,player2,function(data)
 	{
